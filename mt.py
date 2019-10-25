@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import numpy
+importn umpy
 import chainer
 import chainer.functions as F
 import chainer.links as L
@@ -24,7 +24,9 @@ class SimpleMT(chainer.Chain):
             self.embed_source = L.EmbedID(len(source_vocab), w2v_dim)
             self.embed_target = L.EmbedID(len(target_vocab), w2v_dim)
             self.lstm = L.NStepLSTM(n_layers=1, in_size=w2v_dim, out_size=n_units, dropout=0.1)
-            self.lin = L.Linear(in_size=n_units, out_size=len(target_vocab))
+#            self.lstm = L.NStepBiLSTM(n_layers=1, in_size=100, out_size=200, dropout=0.1)
+#            self.lin = L.Linear(in_size=n_units, out_size=len(target_vocab))
+            self.lin = L.Linear(in_size=n_units)
         self.source_vocab = source_vocab
         self.target_vocab = target_vocab
 

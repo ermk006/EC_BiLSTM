@@ -34,7 +34,8 @@ def parse_args():
                         'specifier or an integer. If non-negative integer, '
                         'CuPy arrays with specified device id are used. If '
                         'negative integer, NumPy arrays are used')
-    parser.add_argument('-w', '--w2v_dim', type=int, default=100,
+#    parser.add_argument('-w', '--w2v_dim', type=int, default=100,
+    parser.add_argument('-w', '--w2v_dim', type=int, default=200,
                         help='the dimension of embedded vector (Word2Vec).')
     parser.add_argument('-o', '--out_dir', default='result',
                         help='directory to output the result')
